@@ -1,0 +1,28 @@
+.reminder-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+}
+
+.empty-state p:first-child {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.text-muted {
+  color: #ccc;
+  font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+  .reminder-list {
+    grid-template-columns: 1fr;
+  }
+}
