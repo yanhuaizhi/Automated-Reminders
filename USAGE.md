@@ -352,3 +352,21 @@ WEBHOOK_URL=https://your-webhook-endpoint.com/reminders
 3. **频率**: 一次性提醒需要指定 `remind_date`
 4. **通知**: 邮件和 Webhook 需要相应的配置
 5. **持久化**: 所有数据存储在 `data/reminders.json`
+
+## 快速创建任务（CLI）
+
+如果你已经启动了后端服务（默认 `http://localhost:5000`），可以直接用仓库里的脚本创建任务：
+
+```bash
+python create_task.py "写周报" --time 18:30 --date 2026-05-22 --frequency once --notify system
+```
+
+更多示例：
+
+```bash
+# 每日提醒
+python create_task.py "喝水" --time 10:00 --frequency daily --notify system
+
+# 多通知渠道
+python create_task.py "提交报销" --time 17:00 --date 2026-05-25 --notify system email
+```
